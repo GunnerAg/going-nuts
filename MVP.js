@@ -23,7 +23,10 @@ let bananaImg = new Image();
 bananaImg.src = 'banana.png'
 
 let boatImg = new Image();
-boatImg.src = 'boat.png'
+boatImg.src = 'Ironboat.png'
+
+let seagullImg = new Image();
+seagullImg.src = 'Seagull.png'
 
 let palmTreeX = 0
 let palmTreeY =  20;
@@ -36,11 +39,13 @@ let bananaY =  Math.floor(Math.random()*300) + canvas.height/4
 let isArrowUp = false;
 let isArrowDown = false;
 let score =0;
-let bananaSpeed = 4;
+let bananaSpeed = 2;
 let bananaBorder = 300;
-let nutSpeed = 2;
+let nutSpeed = 4;
 let monkeySpeed = 2;
 let boatX = 0;
+let seagullX = canvas.width
+let seagullY = 10
 let levelUp = true;
 
 
@@ -71,9 +76,9 @@ function monkeyMovement(){
 }
 
 function colisionCheckCoconuts(coconutx, coconuty){
-    if ( (monkeyX < coconutx + coconutImg.width && monkeyX + monkeyImg.width-100 > coconutx) && (monkeyY > coconuty-120 && monkeyY < coconuty+60 )){
+    if ( (monkeyX +100 < coconutx + coconutImg.width && monkeyX + monkeyImg.width-100 > coconutx) && (monkeyY > coconuty-100 && monkeyY < coconuty+60 )){
         clearInterval(intervalId)
-        alert('YOU WENT NUTS')
+        location.href = 'replay.html'
     } 
 }    
 
@@ -90,12 +95,11 @@ function printScore(){
 }
 
 const advanceLevel = () => {
-    bananaSpeed = bananaSpeed + 2;
-    nutSpeed = nutSpeed + 2;
-    monkeySpeed = monkeySpeed + 2;
+    bananaSpeed = bananaSpeed + 1;
+    nutSpeed = nutSpeed + 1;
+    monkeySpeed = monkeySpeed + 1;
     addBanana()
     nutArray = nutArray.concat([{x: canvas.width+300, y:  Math.floor(Math.random()*300) + canvas.height/4 }])
-    
 }
 
 
@@ -112,13 +116,13 @@ let bananaArray = [{x: canvas.width+200, y:  Math.floor(Math.random()*300) + can
         }
         bananaArray[i].x -= bananaSpeed;
         //console.log(bananaArray[i].x > 0 && monkeyX == bananaArray[i].x && monkeyY > bananaArray[i].y-120 && monkeyY < bananaArray[i].y+60)
-            if (bananaArray[i].x > 0 && (monkeyX < bananaArray[i].x + bananaImg.width && monkeyX + monkeyImg.width > bananaArray[i].x) 
+            if (bananaArray[i].x > 0 && (monkeyX +100 < bananaArray[i].x + bananaImg.width && monkeyX + monkeyImg.width-100 > bananaArray[i].x) 
             && monkeyY > bananaArray[i].y-120 && monkeyY < bananaArray[i].y+60 ){
                 console.log('Collision point', bananaArray[i].x)
                 score++
                 bananaArray[i].x = -100
                 bananaArray[i].y = -100
-               if (score >0 && score % 5 == 0){
+               if (score >0 && score % 10 == 0){
                     advanceLevel()
                }
                else {
@@ -132,7 +136,7 @@ let bananaArray = [{x: canvas.width+200, y:  Math.floor(Math.random()*300) + can
 function drawNut(){for (let i=0;i<nutArray.length;i++){
     ctx.drawImage(coconutImg, nutArray[i].x, nutArray[i].y );
     nutArray[i].x -= nutSpeed;
-    if(nutArray[i].x === 200){
+    if(nutArray[i].x === 200 ){
         
         nutArray.push({
             x: canvas.width,
@@ -150,14 +154,47 @@ function drawPalmTree(){
     ctx.drawImage(palmTreeImg, palmTreeX, palmTreeY);
 }
 
-function drawBoat(){
-    ctx.drawImage(boatImg, boatX, 300);
+// function drawBoat(){
+//     ctx.drawImage(boatImg, boatX, 300);
+// }
+
+
+let seagullArray = [{x: canvas.width, y:  0 }]
+function drawSeagull(){for (let i=0;i<seagullArray.length;i++){
+    ctx.drawImage(seagullImg, seagullArray[i].x, seagullArray[i].y );
+    seagullArray[i].x -= 0.5;
+    if(seagullArray[i].x === 200){
+        seagullArray.push({
+            x: canvas.width,
+            y: 0
+        })
+    }
+    if (isArrowDown && seagullArray[i].y <150 ){
+        seagullArray[i].y += 0.5 
+    }
+    else if (isArrowUp && seagullArray[i].y >0){
+        seagullArray[i].y -= 0.5
+    }
+}
 }
 
+let boatArray = [{x: -200, y:300   }]
+function drawBoat(){for (let i=0;i<boatArray.length;i++){
+    ctx.drawImage(boatImg, boatArray[i].x, boatArray[i].y );
+    boatArray[i].x += 0.5;
+    if(boatArray[i].x === 600){
+        boatArray.push({
+            x: -200,
+            y: 300
+        })
+    }
+}
+}
 
 function gameRun(){
     ctx.drawImage(bgImg, 0, 0);
     drawBoat();
+    drawSeagull();
     drawPalmTree();
     drawMonkey();
     drawNut();
@@ -165,6 +202,7 @@ function gameRun(){
     monkeyMovement();
     printScore();
     boatX +=0.1
+    
  }
 
 intervalId = setInterval(() => {

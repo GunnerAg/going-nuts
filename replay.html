@@ -2,18 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=<device-width, initial-scale=1.0">
-  <title>Replay?</title>
+  <meta name="viewport" content="width= <device-width, initial-scale=1.0">
+  <title>replay</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <div class="replay" id="replayScreen">
-        <h1>
-            <canvas id="GameLoading" width="400" height="600"></canvas>
-        </h1>
+  <audio src="jungle.wav" autoplay>
+    <p>If you are reading this, it is because your browser does not support the audio element.</p>
+    </audio>
+   <div class="loading" id="loadingScreen" >
+        <h1 id='title'>
+            ¿REPLAY?
+           <button class="startBut">
+            <a href="Loading.html"  ><img src="1.png"> </a>
+          </button>
+          </h1>
       </div>
-    <button >
-      <a href="game.html" id =gameStart > Replay </a>
-    </button>
-    <script src="replay.js"></script>
 </body>
 </html>>

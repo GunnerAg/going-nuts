@@ -23,7 +23,7 @@ let bananaImg = new Image();
 bananaImg.src = 'banana.png'
 
 let boatImg = new Image();
-boatImg.src = 'boat.png'
+boatImg.src = 'Ironboat.png'
 
 let seagullImg = new Image();
 seagullImg.src = 'Seagull.png'
@@ -152,7 +152,6 @@ function gameRun(){
     printScore();
     boatX +=0.1
     seagullX -=0.3
- 
  }
 
 intervalId = setInterval(() => {

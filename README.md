@@ -60,11 +60,6 @@ ANIMATED ENDING LETTERING.
 
 ## Data structure
 
-# main.js
-
-- loadStartScreen () {}
-- loadGameScreen () {}
-- loadReplayScreen () {}
 
 # game.js
 
@@ -75,6 +70,9 @@ printScore(){}
 drawBanana(){}
 drawNut(){}
 drawPalmTree(){}
+drawBoat()
+drawSeagull()
+
 
 
 ## States y States Transitions
@@ -86,6 +84,18 @@ Definition of the different states and their transition (transition functions)
 
 
 ## Task
+Build loading screen
+Build gamescreen with all the assets
+Code the logic of the MVP game screen
+-Monkey movement.
+-Banana movement.
+-Coconut movement.
+Build the gameover/replay screen.
+Add transitions between the 3 screens.
+Add backgrounds and styles to all the screens.
+Add a boat to gamescreen.
+Add a seagull to gamescreen.
+Add music background to the game.
 
 
 
@@ -98,7 +108,7 @@ Definition of the different states and their transition (transition functions)
 
 ### Git
 URls for the project repo and deploy
-[Link Repo](http://github.com)
+[Link Repo](https://github.com/GunnerAg/going-nuts)
 [Link Deploy](http://github.com)
 
 
