@@ -1,0 +1,79 @@
+.loading{
+  height: 1000px;
+  width: 1500px;
+  padding: 1em;
+  font-family: 'Roboto Mono', sans-serif;
+  color: #2d354c;
+  align-content: center;
+  display: block;
+  background-size: cover;
+  background-image: url(https://image.winudf.com/v2/image1/Y29tLmhkd2Nhci5zdW1tZXJiZWFjaDE1NzE4X3NjcmVlbl9lcy1FU181XzE1NjcwMjc1MTRfMDQw/screen-5.jpg?fakeurl=1&type=.jpg);
+
+}
+.playing{
+    height: auto;
+    width: auto;
+    font-family: 'Roboto Mono', sans-serif;
+    line-height: 1.5;
+    color: #2d354c;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-size: cover;
+    background-image: url(https://image.winudf.com/v2/image1/Y29tLmhkd2Nhci5zdW1tZXJiZWFjaDE1NzE4X3NjcmVlbl9lcy1FU181XzE1NjcwMjc1MTRfMDQw/screen-5.jpg?fakeurl=1&type=.jpg);
+  }
+ 
+  .replay{
+    padding: 1em;
+    max-width: 60em;
+    font-family: 'Roboto Mono', sans-serif;
+    line-height: 1.5;
+    color: #2d354c;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-image: url(https://i.pinimg.com/originals/28/0d/61/280d6187a916255757daaf67dd3cdc2f.jpg)
+  } 
+  .startBut{
+    padding: 1em;
+    font-family: 'Roboto Mono', sans-serif;
+    line-height: 1.5;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 50%;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;  }
+
+  #GameScreen{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
+
+  #gameStart{
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #title{
+    text-align: center;
+    font-size: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    width: 50%;
+    font-family: monospace;
+    color: darkgoldenrod;
+
+  }
+
+  
+  
