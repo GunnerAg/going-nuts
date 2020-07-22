@@ -118,7 +118,6 @@ let bananaArray = [{x: canvas.width+200, y:  Math.floor(Math.random()*300) + can
         //console.log(bananaArray[i].x > 0 && monkeyX == bananaArray[i].x && monkeyY > bananaArray[i].y-120 && monkeyY < bananaArray[i].y+60)
             if (bananaArray[i].x > 0 && (monkeyX +100 < bananaArray[i].x + bananaImg.width && monkeyX + monkeyImg.width-100 > bananaArray[i].x) 
             && monkeyY > bananaArray[i].y-120 && monkeyY < bananaArray[i].y+60 ){
-                console.log('Collision point', bananaArray[i].x)
                 score++
                 bananaArray[i].x = -100
                 bananaArray[i].y = -100
