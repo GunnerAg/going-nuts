@@ -46,7 +46,7 @@ let boatX = 0;
 let seagullX = canvas.width
 let seagullY = 10
 let levelUp = false;
-let speedInc = 0;
+let speedInc = 1;
 let aud = document.getElementById("audio");
 aud.volume = 0.2;
 
@@ -191,12 +191,12 @@ function gameRun(){
     printScore();
     boatX +=0.3
     seagullX -=0.5
-    if(score>10 && score<20){
-        speedInc=1}
-    else if(score>19 && score<30){
+    if(score>4 && score<15){
+        speedInc=3}
+    else if(score>14 && score<25){
         speedInc=4
     }
-    else if(score>30){
+    else if(score>24){
         speedInc=9;
         monkeySpeed =4;
     }

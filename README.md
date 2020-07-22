@@ -1,9 +1,8 @@
 Im I going Nuts?
 
 ## Description
-The game is based on a monkey that jumps between palm trees with coconuts on the top.
-The monkey moves down by default and you can use the arrow up key to climb up the plam tree, he jumps automatically once he reaches the left end of the screen.
-The monkey has to avoid at all cost hitting the ground or the coconuts.
+The game is based on a monkey that climmbs up and down a plam tree in order to catch bananas,
+he must try to avoid at all cost hiting the coconuts.
 
 
 ## MVP (DOM - CANVAS)
@@ -11,8 +10,8 @@ The monkey has to avoid at all cost hitting the ground or the coconuts.
 START SCREEN:
 
 Background .
-Moving game name logo.
 Start game button.
+button to be an img.
 
 GAME SCREEN:
 
