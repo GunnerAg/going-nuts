@@ -23,7 +23,7 @@ let bananaImg = new Image();
 bananaImg.src = 'banana.png'
 
 let boatImg = new Image();
-boatImg.src = 'boat.png'
+boatImg.src = 'Ironboat.png'
 
 let seagullImg = new Image();
 seagullImg.src = 'Seagull.png'
@@ -47,6 +47,8 @@ let seagullX = canvas.width
 let seagullY = 10
 let levelUp = false;
 let speedInc = 0;
+let aud = document.getElementById("audio");
+aud.volume = 0.2;
 
 document.addEventListener('keydown', function(event){
     if (event.key === 'ArrowUp'){
@@ -75,15 +77,27 @@ function monkeyMovement(){
 }
 
 function colisionCheckCoconuts(coconutx, coconuty){
+   
     if ( (monkeyX +100 < coconutx + coconutImg.width && monkeyX + monkeyImg.width-100 > coconutx) && (monkeyY > coconuty-100 && monkeyY < coconuty+60 )){
         clearInterval(intervalId)
+        let scores = JSON.parse(localStorage.getItem('scores'))
+        let currentUser = JSON.parse(localStorage.getItem('user'))
+        scores.forEach((obj) => {
+            console.log(obj.name == currentUser)
+            if (obj.name == currentUser){
+                console.log('Score is', score)
+                obj.score = score
+            }
+        })
+        localStorage.setItem('scores', JSON.stringify(scores) )
         location.href = 'replay.html'
     } 
 }    
 
 function printScore(){
     ctx.font = '35px Courier'
-    ctx.fillText('Score: '+score, 325, 30)
+    ctx.fillStyle = '#e5ff00'    
+    ctx.fillText("Banana's: "+score, 325, 30)
 }
 
 let bananaArray = [{x: canvas.width, y:  Math.floor(Math.random()*300) + canvas.height/4 }]
@@ -135,10 +149,10 @@ function drawSeagull(){for (let i=0;i<seagullArray.length;i++){
             y: 0
         })
     }
-    if (isArrowDown && seagullArray[i].y <150 ){
+    if (isArrowUp && seagullArray[i].y <150 ){
         seagullArray[i].y += 0.5 
     }
-    else if (isArrowUp && seagullArray[i].y >0){
+    else if (isArrowDown && seagullArray[i].y >0){
         seagullArray[i].y -= 0.5
     }
 }

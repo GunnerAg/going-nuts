@@ -2,21 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width= <device-width, initial-scale=1.0">
+  <meta name="viewport" content="width = device-width, initial-scale=1.0">
   <title>Game Loading...</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <audio src="jungle.wav" autoplay>
+  <audio id='audio' src="loop (1).wav" autoplay loop >
     <p>If you are reading this, it is because your browser does not support the audio element.</p>
     </audio>
    <div class="loading" id="loadingScreen" >
         <h1 id='title'>
             Am I going Nuts?
+            <p id='prompt'>Enter your name </p>
+           <input type="text" class="name" >
            <button class="startBut">
             <a href="game.html"  ><img src="3.png"> </a>
           </button>
           </h1>
       </div>
+   <script src="loading.js" ></script>   
 </body>
 </html>>
