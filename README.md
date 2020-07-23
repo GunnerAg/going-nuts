@@ -60,16 +60,17 @@ SCORE BOARD
 
 
 # game.js
+gameRun(){};
+drawMonkey(){};
+monkeyMovement(){};
+colisionCheck(){};
+printScore(){};
+drawBanana(){};
+drawNut(){};
+drawPalmTree(){};
+drawBoat(){};
+drawSeagull(){};
 
-drawMonkey(){}
-monkeyMovement(){}
-colisionCheck(){}
-printScore(){}
-drawBanana(){}
-drawNut(){}
-drawPalmTree(){}
-drawBoat()
-drawSeagull()
 
 
 
