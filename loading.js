@@ -18,7 +18,7 @@ name.addEventListener('change', (event) => {
     }
     console.log(scores)
     localStorage.setItem('scores', JSON.stringify(scores) )
-    localStorage.setItem('user', JSON.stringifyevent.target.value)
+    localStorage.setItem('user', JSON.stringify(event.target.value))
    
 })
 let aud = document.getElementById("audio");

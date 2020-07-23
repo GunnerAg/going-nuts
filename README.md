@@ -107,7 +107,7 @@ Add music background to the game.
 ### Git
 URls for the project repo and deploy
 [Link Repo](https://github.com/GunnerAg/going-nuts)
-[Link Deploy](http://github.com)
+[Link Deploy](https://gunnerag.github.io/going-nuts/)
 
 
 ### Slides

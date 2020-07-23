@@ -81,6 +81,7 @@ function colisionCheckCoconuts(coconutx, coconuty){
     if ( (monkeyX +100 < coconutx + coconutImg.width && monkeyX + monkeyImg.width-100 > coconutx) && (monkeyY > coconuty-100 && monkeyY < coconuty+60 )){
         clearInterval(intervalId)
         let scores = JSON.parse(localStorage.getItem('scores'))
+        console.log('Score is', score)
         let currentUser = JSON.parse(localStorage.getItem('user'))
         scores.forEach((obj) => {
             console.log(obj.name == currentUser)
@@ -89,6 +90,7 @@ function colisionCheckCoconuts(coconutx, coconuty){
                 obj.score = score
             }
         })
+        console.log(scores)
         localStorage.setItem('scores', JSON.stringify(scores) )
         location.href = 'replay.html'
     } 
