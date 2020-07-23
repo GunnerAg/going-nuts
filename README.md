@@ -112,4 +112,4 @@ URls for the project repo and deploy
 
 ### Slides
 URls for the project presentation (slides)
-[Link Slides.com](https://slides.com/gunnerandersen/deck)
+[Link Slides.com](https://slides.com/gunnerandersen/goingnuts)
